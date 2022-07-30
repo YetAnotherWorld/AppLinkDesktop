@@ -1,0 +1,7 @@
+// SPDX-FileCopyrightText: 2022 Guillaume Frognier <guillaume.frognier@laposte.net>
+// SPDX-License-Identifier: BSD-3-Clause
+
+ext {
+    projectVersionFull = "@PROJECT_VERSION@"
+}
+

@@ -1,0 +1,10 @@
+# SPDX-FileCopyrightText: 2022 Guillaume Frognier <guillaume.frognier@laposte.net>
+# SPDX-License-Identifier: LGPL-2.0-or-later
+
+File=applinkdesktopconfig.kcfg
+ClassName=AppLinkDesktopConfig
+Mutators=true
+DefaultValueGetters=true
+GenerateProperties=true
+ParentInConstructor=true
+Singleton=true
