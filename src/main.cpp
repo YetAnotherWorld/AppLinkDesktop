@@ -51,7 +51,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     QStringLiteral("https://kde.org/")
   );
   KAboutData::setApplicationData(aboutData);
-  QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("desktop")));
+  QGuiApplication::setWindowIcon(QIcon(":/AppLinkDesktop.svg"));
 
   QQmlApplicationEngine engine;
 

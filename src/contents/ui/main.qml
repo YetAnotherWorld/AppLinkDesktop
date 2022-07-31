@@ -20,7 +20,7 @@ Kirigami.ApplicationWindow {
 
   onClosing: App.saveWindowGeometry(root)
   globalDrawer: Kirigami.GlobalDrawer {
-    titleIcon: "desktop"
+    //titleIcon: "desktop"
     isMenu: !root.isMobile
     actions: [
       Kirigami.Action {
@@ -79,7 +79,7 @@ Kirigami.ApplicationWindow {
               columns: width > Kirigami.Units.gridUnit * 20 ? 4 : 2
               Kirigami.Icon {
                 source: model.icon
-                fallback: "emblem-error"
+                //fallback: "emblem-error"
                 Layout.fillWidth: true
                 Layout.maximumHeight: Kirigami.Units.iconSizes.huge
                 Layout.maximumWidth: Kirigami.Units.iconSizes.huge
