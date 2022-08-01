@@ -74,6 +74,7 @@ Thumbs.db
 # Files & Directories
 build/
 howto/
+src/res/fallback
 CMakeLists.txt.user
 
 

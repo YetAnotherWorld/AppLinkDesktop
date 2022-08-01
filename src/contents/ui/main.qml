@@ -30,7 +30,7 @@ Kirigami.ApplicationWindow {
       },
       Kirigami.Action {
         text: i18n("Quit")
-        icon.name: "application-exit"
+        icon.name: "gtk-quit"
         onTriggered: Qt.quit()
       }
     ]
@@ -52,7 +52,7 @@ Kirigami.ApplicationWindow {
       id: applyAction
       icon.name: "dialog-ok-apply"
       onTriggered: {
-        showPassiveNotification("apply triggered")
+        showPassiveNotification("applyed")
         desktopLinkModel.applyChange()
       }
     }
@@ -108,7 +108,7 @@ Kirigami.ApplicationWindow {
                 Layout.columnSpan: 2
                 text: "cancel add"
                 onClicked: {
-                  showPassiveNotification("cancel add clicked")
+                  showPassiveNotification("add canceled")
                   model.toadd = false
                 }
               }
@@ -118,7 +118,7 @@ Kirigami.ApplicationWindow {
                 Layout.columnSpan: 2
                 text: "cancel remove"
                 onClicked: {
-                  showPassiveNotification("cancel remove clicked")
+                  showPassiveNotification("remove canceled")
                   model.toremove = false
                 }
               }
@@ -128,7 +128,7 @@ Kirigami.ApplicationWindow {
                 Layout.columnSpan: 2
                 text: "add desktop link"
                 onClicked: {
-                  showPassiveNotification("add desktop link clicked")
+                  showPassiveNotification("desktop link added")
                   model.toadd = true
                 }
               }
@@ -138,7 +138,7 @@ Kirigami.ApplicationWindow {
                 Layout.columnSpan: 2
                 text: "remove desktop link"
                 onClicked: {
-                  showPassiveNotification("remove desktop link clicked")
+                  showPassiveNotification("desktop link removed")
                   model.toremove = true
                 }
               }
