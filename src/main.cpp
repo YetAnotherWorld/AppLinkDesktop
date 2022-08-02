@@ -28,7 +28,8 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
   QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
   QApplication app(argc, argv);
   QCoreApplication::setOrganizationName(QStringLiteral("KDE"));
-  QCoreApplication::setApplicationName(QStringLiteral("AppLinkDesktop"));
+  //QCoreApplication::setApplicationName(QStringLiteral("AppLinkDesktop"));
+  KLocalizedString::setApplicationDomain("applindesktop");
 
   KAboutData aboutData(
     // The program name used internally.
@@ -51,7 +52,8 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     QStringLiteral("https://kde.org/")
   );
   KAboutData::setApplicationData(aboutData);
-  QGuiApplication::setWindowIcon(QIcon(":/AppLinkDesktop.svg"));
+  //QGuiApplication::setWindowIcon(QIcon(":/AppLinkDesktop.svg"));
+  QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("AppLinkDesktop.svg")));
 
   QQmlApplicationEngine engine;
 

@@ -52,7 +52,7 @@ Kirigami.ApplicationWindow {
       id: applyAction
       icon.name: "dialog-ok-apply"
       onTriggered: {
-        showPassiveNotification("applyed")
+        showPassiveNotification(i18n("applyed"))
         desktopLinkModel.applyChange()
       }
     }
@@ -106,9 +106,9 @@ Kirigami.ApplicationWindow {
                 visible: model.toadd
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 Layout.columnSpan: 2
-                text: "cancel add"
+                text: i18n("cancel add")
                 onClicked: {
-                  showPassiveNotification("add canceled")
+                  showPassiveNotification(i18n("add canceled"))
                   model.toadd = false
                 }
               }
@@ -116,9 +116,9 @@ Kirigami.ApplicationWindow {
                 visible: model.toremove
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 Layout.columnSpan: 2
-                text: "cancel remove"
+                text: i18n("cancel remove")
                 onClicked: {
-                  showPassiveNotification("remove canceled")
+                  showPassiveNotification(i18n("remove canceled"))
                   model.toremove = false
                 }
               }
@@ -126,9 +126,9 @@ Kirigami.ApplicationWindow {
                 visible: !model.present && !model.toadd && !model.toremove
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 Layout.columnSpan: 2
-                text: "add desktop link"
+                text: i18n("add desktop link")
                 onClicked: {
-                  showPassiveNotification("desktop link added")
+                  showPassiveNotification(i18n("desktop link added"))
                   model.toadd = true
                 }
               }
@@ -136,9 +136,9 @@ Kirigami.ApplicationWindow {
                 visible: model.present && !model.toadd && !model.toremove
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 Layout.columnSpan: 2
-                text: "remove desktop link"
+                text: i18n("remove desktop link")
                 onClicked: {
-                  showPassiveNotification("desktop link removed")
+                  showPassiveNotification(i18n("desktop link removed"))
                   model.toremove = true
                 }
               }

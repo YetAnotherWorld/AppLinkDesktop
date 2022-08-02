@@ -48,6 +48,12 @@ sudo apt install cmake extra-cmake-modules qml qtdeclarative5-dev qtquickcontrol
 #### Manjaro and Arch
 
 ```bash
+sudo pacman -Syu --needed base-devel cmake extra-cmake-modules
+```
+
+if you are not already using KDE desktop environment:
+
+```bash
 sudo pacman -Syu --needed qt5-svg qt5-tools qt5-x11extras kdesdk 
 ```
 
@@ -56,9 +62,17 @@ sudo pacman -Syu --needed qt5-svg qt5-tools qt5-x11extras kdesdk
 Open your favorite **terminal emulator**
 
 Upgrade your system:
+-> For Debian based distros:
+
 ```bash
 sudo apt update 
 sudo apt upgrade
+```
+
+-> For Arch based distros:
+
+```bash
+sudo pacman -Syu
 ```
 
 Make a directory for Github project:
@@ -96,7 +110,7 @@ cmake -DCMAKE_INSTALL_PREFIX=`kf5-config --prefix` -DCMAKE_BUILD_TYPE=release ..
 Install it:
 
 ```bash
-make install
+sudo make install
 ```
 
 ## Uninstall
@@ -110,6 +124,17 @@ or
 ```bash
 cd $HOME/Github/ApplinkDesktop/build
 sudo make uninstall
+```
+
+## Upgrade
+
+```bash
+cd $HOME/Github/ApplinkDesktop/
+git fetch
+git pull origin main
+cd $HOME/Github/ApplinkDesktop/build
+cmake -DCMAKE_INSTALL_PREFIX=`kf5-config --prefix` -DCMAKE_BUILD_TYPE=release ..
+sudo make install
 ```
 
 ## TODO

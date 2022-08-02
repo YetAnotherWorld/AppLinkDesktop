@@ -29,6 +29,8 @@ ecm_setup_version(${PROJECT_VERSION}
 find_package(Qt5 ${QT5_MIN_VERSION} REQUIRED COMPONENTS Core Gui Qml QuickControls2 Svg)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Kirigami2 CoreAddons Config I18n)
 
+
+
 if (ANDROID)
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/android/version.gradle.in ${CMAKE_BINARY_DIR}/version.gradle)
 endif()
@@ -40,3 +42,6 @@ install(FILES org.kde.applinkdesktop.metainfo.xml DESTINATION ${KDE_INSTALL_META
 install(FILES src/res/AppLinkDesktop.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/apps)
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
+
+#find_package(KF5I18n NO_MODULE)
+ki18n_install(po)
