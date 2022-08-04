@@ -29,10 +29,6 @@ public:
 
   Q_INVOKABLE void applyChange();
 
-  // Q_INVOKABLE void add(const QString &title);
-  // Q_INVOKABLE void remove(const int &index);
-  // Q_INVOKABLE void clear();
-
 protected:
   bool loadData();
 

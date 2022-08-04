@@ -10,7 +10,6 @@ import org.kde.AppLinkDesktop 1.0
 Kirigami.ApplicationWindow {
   id: root
 
-  //title: i18nc("@title:window", "Kdesktop")
   required property DesktopLinkModel desktopLinkModel
 
   width: Kirigami.Units.gridUnit * 26
@@ -20,7 +19,6 @@ Kirigami.ApplicationWindow {
 
   onClosing: App.saveWindowGeometry(root)
   globalDrawer: Kirigami.GlobalDrawer {
-    //titleIcon: "desktop"
     isMenu: !root.isMobile
     actions: [
       Kirigami.Action {
@@ -36,23 +34,13 @@ Kirigami.ApplicationWindow {
     ]
   }
 
-  //  footer: Controls.ToolBar {
-  //    Controls.ToolButton {
-  //      anchors{
-  //        right: parent.right
-  //      }
-  //      id: applyButton
-  //      icon.name: "dialog-ok-apply"
-  //      display: AbstractButton.IconOnly
-  //    }
-  //  }
   pageStack.initialPage: Kirigami.ScrollablePage {
     id: page
     actions.main: Kirigami.Action {
       id: applyAction
       icon.name: "dialog-ok-apply"
       onTriggered: {
-        showPassiveNotification(i18n("applyed"))
+        showPassiveNotification(i18n("Applyed"))
         desktopLinkModel.applyChange()
       }
     }
@@ -79,7 +67,6 @@ Kirigami.ApplicationWindow {
               columns: width > Kirigami.Units.gridUnit * 20 ? 4 : 2
               Kirigami.Icon {
                 source: model.icon
-                //fallback: "emblem-error"
                 Layout.fillWidth: true
                 Layout.maximumHeight: Kirigami.Units.iconSizes.huge
                 Layout.maximumWidth: Kirigami.Units.iconSizes.huge
@@ -106,9 +93,9 @@ Kirigami.ApplicationWindow {
                 visible: model.toadd
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 Layout.columnSpan: 2
-                text: i18n("cancel add")
+                text: i18n("Cancel add")
                 onClicked: {
-                  showPassiveNotification(i18n("add canceled"))
+                  showPassiveNotification(i18n("Add canceled"))
                   model.toadd = false
                 }
               }
@@ -116,9 +103,9 @@ Kirigami.ApplicationWindow {
                 visible: model.toremove
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 Layout.columnSpan: 2
-                text: i18n("cancel remove")
+                text: i18n("Cancel remove")
                 onClicked: {
-                  showPassiveNotification(i18n("remove canceled"))
+                  showPassiveNotification(i18n("Remove canceled"))
                   model.toremove = false
                 }
               }
@@ -126,9 +113,9 @@ Kirigami.ApplicationWindow {
                 visible: !model.present && !model.toadd && !model.toremove
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 Layout.columnSpan: 2
-                text: i18n("add desktop link")
+                text: i18n("Add desktop link")
                 onClicked: {
-                  showPassiveNotification(i18n("desktop link added"))
+                  showPassiveNotification(i18n("Desktop link added"))
                   model.toadd = true
                 }
               }
@@ -136,9 +123,9 @@ Kirigami.ApplicationWindow {
                 visible: model.present && !model.toadd && !model.toremove
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 Layout.columnSpan: 2
-                text: i18n("remove desktop link")
+                text: i18n("Remove desktop link")
                 onClicked: {
-                  showPassiveNotification(i18n("desktop link removed"))
+                  showPassiveNotification(i18n("Desktop link removed"))
                   model.toremove = true
                 }
               }

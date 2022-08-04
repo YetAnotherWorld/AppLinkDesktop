@@ -1,8 +1,11 @@
 #include "desktoplinkmodel.h"
 #include <QDebug>
 #include <QDir>
+#include <QLocale>
 #include <QSettings>
 #include <QStandardPaths>
+
+#include <iostream>
 
 DesktopLinkModel::DesktopLinkModel(QObject *parent) : QAbstractListModel(parent)
 {
@@ -82,7 +85,7 @@ bool DesktopLinkModel::setData(const QModelIndex &index, const QVariant &value, 
 
 void DesktopLinkModel::applyChange()
 {
-  qDebug() << "DesktopLinkModel::applyChange()" <<Qt::endl;
+  qDebug() << "DesktopLinkModel::applyChange()" << Qt::endl;
 
   const QString desktopPath = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
   beginResetModel();
@@ -90,21 +93,21 @@ void DesktopLinkModel::applyChange()
   {
     if (dli.toAdd())
     {
-      //Add desktop link
-      QFile::copy(dli.filepath(),desktopPath+QDir::separator()+dli.file());
-      QFile copyFile(desktopPath+QDir::separator()+dli.file());
+      // Add desktop link
+      QFile::copy(dli.filepath(), desktopPath + QDir::separator() + dli.file());
+      QFile copyFile(desktopPath + QDir::separator() + dli.file());
       QFileDevice::Permissions initialPermission = copyFile.permissions();
       copyFile.setPermissions(initialPermission | QFile::ExeGroup | QFile::ExeOther | QFile::ExeOther | QFile::ExeUser);
-      //Set toadd to false and present to true
+      // Set toadd to false and present to true
       dli.setToAdd(false);
       dli.setPresent(true);
     }
     else if (dli.toRemove())
     {
-      //Remove desktop link
-      QFile rmFile(desktopPath+QDir::separator()+dli.file());
+      // Remove desktop link
+      QFile rmFile(desktopPath + QDir::separator() + dli.file());
       rmFile.remove();
-      //Set toremove to false and present to false
+      // Set toremove to false and present to false
       dli.setToRemove(false);
       dli.setPresent(false);
     }
@@ -114,8 +117,6 @@ void DesktopLinkModel::applyChange()
 
 bool DesktopLinkModel::loadData()
 {
-  beginResetModel();
-  m_data.clear();
   const QString desktopPath = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
   QDir desktopDir(desktopPath);
   desktopDir.setNameFilters({"*.desktop"});
@@ -126,9 +127,17 @@ bool DesktopLinkModel::loadData()
   appDir.setNameFilters({"*.desktop"});
   const QStringList appFiles = appDir.entryList();
 
+  QStringList listStringLocales = QLocale::system().uiLanguages();
+  qDebug() << listStringLocales << Qt::endl;
+  for (auto &stringLocale : listStringLocales)
+  {
+    stringLocale.resize(2);
+  }
+
   for (const QString &appFile : appFiles)
   {
     QSettings settings(appPath + QDir::separator() + appFile, QSettings::IniFormat);
+    settings.setIniCodec("UTF-8");
     DesktopLinkItem dli;
     settings.beginGroup("Desktop Entry");
     bool skip = false;
@@ -140,16 +149,33 @@ bool DesktopLinkModel::loadData()
       continue;
     dli.setPath(appPath);
     dli.setFile(appFile);
-    dli.setName(settings.value("Name").toString());
     dli.setIcon(settings.value("Icon").toString());
-    dli.setComment(settings.value("Comment").toString());
+    for (auto &stringLocale : listStringLocales)
+    {
+      QString keyName = "Name[" + stringLocale + "]";
+      if (settings.contains(keyName))
+      {
+        dli.setName(settings.value(keyName).toString());
+        break;
+      }
+    }
+    if (dli.name().isEmpty())
+      dli.setName(settings.value("Name").toString());
+    for (auto &stringLocale : listStringLocales)
+    {
+      QString keyComment = "Comment[" + stringLocale + "]";
+      if (settings.contains(keyComment))
+      {
+        dli.setComment(settings.value(keyComment).toString());
+        break;
+      }
+    }
+    if (dli.comment().isEmpty())
+      dli.setComment(settings.value("Comment").toString());
+
     settings.endGroup();
     dli.setPresent(desktopFiles.contains(appFile));
-    // qDebug() << "appFile: " << appFile << (df.present()? " is on the desktop" : " is not on the desktop") <<
-    // Qt::endl;
     m_data.append(dli);
   }
-
-  beginResetModel();
   return true;
 }

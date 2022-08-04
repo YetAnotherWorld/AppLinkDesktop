@@ -8,8 +8,8 @@ SPDX-FileCopyrightText: 2022 Guillaume Frognier <guillaume.frognier@laposte.net>
 SPDX-License-Identifier: LGPL-2.0-or-later
 -->
     <group name="General">
-        <entry name="someSetting" type="Bool">
-            <label>Some setting description</label>
+        <entry name="Configuration" type="Bool">
+            <label>.</label>
             <default>true</default>
         </entry>
     </group>

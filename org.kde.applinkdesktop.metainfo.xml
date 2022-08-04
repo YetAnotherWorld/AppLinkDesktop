@@ -5,18 +5,15 @@
  -->
 <component type="desktop-application">
   <id>org.kde.applinkdesktop</id>
-  <name>AppLinkDesktop Kirigami Application</name>
-  <summary>A short summary describing what this software is about</summary>
-  <metadata_license>A permissive license for this metadata, e.g. "FSFAP" + Update the SPDX tags above!</metadata_license>
-  <project_license>The license of this software as SPDX string, e.g. "GPL-2.0-or-later"</project_license>
-  <developer_name>The software vendor name, e.g. "ACME Corporation"</developer_name>
+  <name>AppLinkDesktop</name>
+  <name xml:lang="fr">AppLinkDesktop</name>
+  <summary>Manage desktop applications' links</summary>
+  <summary xml:lang="fr">Gérer les liens d'applications sur le bureau</summary>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-2.0-or-later</project_license>
+  <developer_name>Guillaume Frognier</developer_name>
   <description>
-    <p>Multiple paragraphs of long description, describing this software component.</p>
-    <p>You can also use ordered and unordered lists:</p>
-    <ul>
-      <li>Feature 1</li>
-      <li>Feature 2</li>
-    </ul>
-    <p>Keep in mind to XML-escape characters, and that this is not HTML markup.</p>
+    <p>AppLinkDesktop is an utility that allows user to add or remove applications' links on the desktop.</p>
+    <p xml:lang="fr">AppLinkDesktop est un utilitaire qui permet à l'utilisateur d'ajouter ou supprimer des liens d'application sur le bureau.</p>
   </description>
 </component>

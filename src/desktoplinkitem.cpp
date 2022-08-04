@@ -2,6 +2,8 @@
 
 DesktopLinkItem::DesktopLinkItem()
 {
+  m_name ="";
+  m_comment="";
   m_present = false;
   m_toRemove = false;
   m_toAdd = false;

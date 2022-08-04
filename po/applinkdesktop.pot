@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: applinkdesktop\n"
+"Project-Id-Version: PACKAGE\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-02 18:01+0200\n"
+"POT-Creation-Date: 2022-08-04 14:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,72 +39,72 @@ msgstr ""
 
 #: src/contents/ui/main.qml:55
 #, kde-format
-msgid "applyed"
+msgid "Applyed"
 msgstr ""
 
 #: src/contents/ui/main.qml:109
 #, kde-format
-msgid "cancel add"
+msgid "Cancel add"
 msgstr ""
 
 #: src/contents/ui/main.qml:111
 #, kde-format
-msgid "add canceled"
+msgid "Add canceled"
 msgstr ""
 
 #: src/contents/ui/main.qml:119
 #, kde-format
-msgid "cancel remove"
+msgid "Cancel remove"
 msgstr ""
 
 #: src/contents/ui/main.qml:121
 #, kde-format
-msgid "remove canceled"
+msgid "Remove canceled"
 msgstr ""
 
 #: src/contents/ui/main.qml:129
 #, kde-format
-msgid "add desktop link"
+msgid "Add desktop link"
 msgstr ""
 
 #: src/contents/ui/main.qml:131
 #, kde-format
-msgid "desktop link added"
+msgid "Desktop link added"
 msgstr ""
 
 #: src/contents/ui/main.qml:139
 #, kde-format
-msgid "remove desktop link"
+msgid "Remove desktop link"
 msgstr ""
 
 #: src/contents/ui/main.qml:141
 #, kde-format
-msgid "desktop link removed"
+msgid "Desktop link removed"
 msgstr ""
 
-#: src/main.cpp:37
+#: src/main.cpp:38
 #, kde-format
 msgctxt "@title"
 msgid "AppLinkDesktop"
 msgstr ""
 
-#: src/main.cpp:41
+#: src/main.cpp:42
 #, kde-format
 msgid "Simple application for managing applications' links on the desktop"
 msgstr ""
 
-#: src/main.cpp:45
+#: src/main.cpp:46
 #, kde-format
 msgid "(c) 2022"
 msgstr ""
 
-#: src/main.cpp:48
+#: src/main.cpp:49
 #, kde-format
 msgctxt "@info:credit"
 msgid "Guillaume Frognier"
 msgstr ""
 
-#: src/main.cpp:49
+#: src/main.cpp:50
 #, kde-format
 msgctxt "@info:credit"
 msgid "Author Role"

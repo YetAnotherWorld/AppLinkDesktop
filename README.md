@@ -62,6 +62,7 @@ sudo pacman -Syu --needed qt5-svg qt5-tools qt5-x11extras kdesdk
 Open your favorite **terminal emulator**
 
 Upgrade your system:
+
 -> For Debian based distros:
 
 ```bash
