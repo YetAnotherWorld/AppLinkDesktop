@@ -79,6 +79,8 @@ CMakeLists.txt.user
 l10n-scripty/
 po/index.lokalize
 po/main.lqa
+.flatpak-builder/
+build-flatpak/
 
 
 

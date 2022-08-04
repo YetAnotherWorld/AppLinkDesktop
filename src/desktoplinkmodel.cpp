@@ -9,7 +9,7 @@
 
 DesktopLinkModel::DesktopLinkModel(QObject *parent) : QAbstractListModel(parent)
 {
-  qDebug() << "DesktopLinkModel::DesktopLinkModel(QObject *parent)" << Qt::endl;
+//  qDebug() << "DesktopLinkModel::DesktopLinkModel(QObject *parent)" << Qt::endl;
   loadData();
 }
 
@@ -85,7 +85,7 @@ bool DesktopLinkModel::setData(const QModelIndex &index, const QVariant &value, 
 
 void DesktopLinkModel::applyChange()
 {
-  qDebug() << "DesktopLinkModel::applyChange()" << Qt::endl;
+ // qDebug() << "DesktopLinkModel::applyChange()" << Qt::endl;
 
   const QString desktopPath = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
   beginResetModel();
@@ -128,7 +128,6 @@ bool DesktopLinkModel::loadData()
   const QStringList appFiles = appDir.entryList();
 
   QStringList listStringLocales = QLocale::system().uiLanguages();
-  qDebug() << listStringLocales << Qt::endl;
   for (auto &stringLocale : listStringLocales)
   {
     stringLocale.resize(2);
