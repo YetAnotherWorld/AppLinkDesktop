@@ -42,7 +42,7 @@ You need at least version 21.10.
 Open your favorite **terminal emulator**
 
 ```bash
-sudo apt install cmake extra-cmake-modules qml qtdeclarative5-dev qtquickcontrols2-5-dev libqt5svg5-dev libkf5coreaddons-dev Libkf5config-dev libkf5i18n-dev gettext
+sudo apt install cmake extra-cmake-modules qml qtdeclarative5-dev qtquickcontrols2-5-dev libqt5svg5-dev libkf5coreaddons-dev Libkf5config-dev libkf5i18n-dev gettext libkf5kdelibs4support5-bin
 ```
 
 #### Manjaro and Arch

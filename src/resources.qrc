@@ -2,6 +2,5 @@
     <qresource prefix="/">
         <file alias="main.qml">contents/ui/main.qml</file>
         <file alias="About.qml">contents/ui/About.qml</file>
-        <file alias="AppLinkDesktop.svg">res/AppLinkDesktop.svg</file>
     </qresource>
 </RCC>
