@@ -141,6 +141,6 @@ sudo make install
 ## TODO
 - [ ] better align icons with each other
 - [ ] add fallback icons
-- [ ] add tooltips
+- [x] add tooltips
 - [ ] translation
 

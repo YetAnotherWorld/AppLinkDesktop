@@ -27,37 +27,58 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "guillaume.hello.world@gmail.com"
 
-#: src/contents/ui/main.qml:27
+#: src/contents/ui/main.qml:25
 #, kde-format
 msgid "About AppLinkDesktop"
-msgstr "A propos d'AppLinkDesktop"
+msgstr "À propos d'AppLinkDesktop"
 
-#: src/contents/ui/main.qml:32
+#: src/contents/ui/main.qml:30
 #, kde-format
 msgid "Quit"
 msgstr "Quitter"
 
-#: src/contents/ui/main.qml:55
+#: src/contents/ui/main.qml:42
+#, kde-format
+msgid "Apply"
+msgstr "Appliquer"
+
+#: src/contents/ui/main.qml:43
+#, kde-format
+msgid "Apply the modification(s)"
+msgstr "Appliquer le(s) modification(s)"
+
+#: src/contents/ui/main.qml:45
 #, kde-format
 msgid "Applyed"
 msgstr "Appliqué"
 
-#: src/contents/ui/main.qml:109
+#: src/contents/ui/main.qml:99
 #, kde-format
 msgid "Cancel add"
 msgstr "Annuler l'ajout"
 
-#: src/contents/ui/main.qml:111
+
+#: src/contents/ui/main.qml:103
+#, kde-format
+msgid "Cancel the addition of the application's link on the desktop"
+msgstr "Annuler l'ajout du lien vers l'application sur le bureau"
+
+#: src/contents/ui/main.qml:105
 #, kde-format
 msgid "Add canceled"
 msgstr "Ajout annulé"
 
-#: src/contents/ui/main.qml:119
+#: src/contents/ui/main.qml:114
 #, kde-format
 msgid "Cancel remove"
 msgstr "Annuler la suppression"
 
-#: src/contents/ui/main.qml:121
+#: src/contents/ui/main.qml:118
+#, kde-format
+msgid "Cancel the removal of the application's link on the desktop"
+msgstr "Annuler la suppression du lien vers l'application sur le bureau"
+
+#: src/contents/ui/main.qml:120
 #, kde-format
 msgid "Remove canceled"
 msgstr "Suppression annulé"
@@ -67,17 +88,27 @@ msgstr "Suppression annulé"
 msgid "Add desktop link"
 msgstr "Ajouter un lien bureau"
 
-#: src/contents/ui/main.qml:131
+#: src/contents/ui/main.qml:133
+#, kde-format
+msgid "Add a link to the application on the desktop"
+msgstr "Ajouter un lien vers l'application sur le bureau"
+
+#: src/contents/ui/main.qml:135
 #, kde-format
 msgid "Desktop link added"
 msgstr "Lien bureau ajouté"
 
-#: src/contents/ui/main.qml:139
+#: src/contents/ui/main.qml:144
 #, kde-format
 msgid "Remove desktop link"
 msgstr "Supprimer le lien bureau"
 
-#: src/contents/ui/main.qml:141
+#: src/contents/ui/main.qml:148
+#, kde-format
+msgid "Remove the link to the application on the desktop"
+msgstr "Supprimer le lien vers l'application sur le bureau"
+
+#: src/contents/ui/main.qml:150
 #, kde-format
 msgid "Desktop link removed"
 msgstr "Lien bureau supprimé"

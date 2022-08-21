@@ -39,6 +39,8 @@ Kirigami.ApplicationWindow {
     actions.main: Kirigami.Action {
       id: applyAction
       icon.name: "dialog-ok-apply"
+      text: i18n("Apply")
+      tooltip: i18n("Apply the modification(s)")
       onTriggered: {
         showPassiveNotification(i18n("Applyed"))
         desktopLinkModel.applyChange()
@@ -93,7 +95,12 @@ Kirigami.ApplicationWindow {
                 visible: model.toadd
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 Layout.columnSpan: 2
+                icon.name: "gtk-cancel"
                 text: i18n("Cancel add")
+                display: "TextBesideIcon"
+                Controls.ToolTip.visible: hovered
+                Controls.ToolTip.delay: 1000
+                Controls.ToolTip.text: i18n("Cancel the addition of the application's link on the desktop")
                 onClicked: {
                   showPassiveNotification(i18n("Add canceled"))
                   model.toadd = false
@@ -103,7 +110,12 @@ Kirigami.ApplicationWindow {
                 visible: model.toremove
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 Layout.columnSpan: 2
+                icon.name: "gtk-cancel"
                 text: i18n("Cancel remove")
+                display: "TextBesideIcon"
+                Controls.ToolTip.visible: hovered
+                Controls.ToolTip.delay: 1000
+                Controls.ToolTip.text: i18n("Cancel the removal of the application's link on the desktop")
                 onClicked: {
                   showPassiveNotification(i18n("Remove canceled"))
                   model.toremove = false
@@ -113,7 +125,12 @@ Kirigami.ApplicationWindow {
                 visible: !model.present && !model.toadd && !model.toremove
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 Layout.columnSpan: 2
+                icon.name: "bqm-add"
                 text: i18n("Add desktop link")
+                display: "TextBesideIcon"
+                Controls.ToolTip.visible: hovered
+                Controls.ToolTip.delay: 1000
+                Controls.ToolTip.text: i18n("Add a link to the application on the desktop")
                 onClicked: {
                   showPassiveNotification(i18n("Desktop link added"))
                   model.toadd = true
@@ -123,7 +140,12 @@ Kirigami.ApplicationWindow {
                 visible: model.present && !model.toadd && !model.toremove
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 Layout.columnSpan: 2
+                icon.name: "delete"
                 text: i18n("Remove desktop link")
+                display: "TextBesideIcon"
+                Controls.ToolTip.visible: hovered
+                Controls.ToolTip.delay: 1000
+                Controls.ToolTip.text: i18n("Remove the link to the application on the desktop")
                 onClicked: {
                   showPassiveNotification(i18n("Desktop link removed"))
                   model.toremove = true

@@ -48,11 +48,10 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
   aboutData.addAuthor(
     i18nc("@info:credit", "Guillaume Frognier"),
     i18nc("@info:credit", "Author Role"),
-    QStringLiteral("guillaume.frognier@laposte.net"),
+    QStringLiteral("guillaume.hello.world@gmail.com"),
     QStringLiteral("https://kde.org/")
   );
   KAboutData::setApplicationData(aboutData);
-  //QGuiApplication::setWindowIcon(QIcon(":/AppLinkDesktop.svg"));
   QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("AppLinkDesktop.svg")));
 
   QQmlApplicationEngine engine;
